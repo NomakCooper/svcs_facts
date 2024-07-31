@@ -119,7 +119,7 @@ $ cp path/to/module library
 ├── root repository
 │   ├── playbooks
 │   │    ├── /library                
-│   │    │   └── svcs_facts.py  ##<-- python custom module
+│   │    │   └── svcs_facts.py      ##<-- python custom module
 │   │    └── your_playbook.yml      ##<-- you playbook
 ```   
 
