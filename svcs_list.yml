@@ -1,0 +1,39 @@
+---
+- name: Gather SMF Service
+  hosts: all
+  become: true
+  become_method: sudo
+
+# Global Vars
+  vars:
+    fmri: "svc:/network/smtp:sendmail"
+
+  # Gather Fatc
+  pre_tasks:
+
+  - name: "Gather fact"
+    setup:
+      filter:
+      - 'ansible_os_family'
+
+  tasks:
+
+  # check OS Type
+  - name: "Check OS Type"
+    fail:
+      msg: The system is not Solaris
+    when: ( ansible_os_family != "Solaris" )
+
+  - name: gather smf services
+    svcs_facts:
+
+  # set fact for print:
+  - name: set fact for debug
+    set_fact:
+      sendmail_state: "{{ ansible_facts.svcs_list | selectattr('FMRI','equalto', fmri ) | map(attribute='STATE') | first }}"
+      sendmail_stime: "{{ ansible_facts.svcs_list | selectattr('FMRI','equalto', fmri ) | map(attribute='STIME') | first }}"
+
+  # print STATE of sendmail service
+  - name: print state of sendmail service
+    debug:
+      msg: "sendmail service is in {{sendmail_state}} state from {{sendmail_stime}}"       
