@@ -2,6 +2,9 @@
 <meta name="description" content="Gathers facts about Solaris SMF services on a SunOS/Oracle Solaris host by svcs">
 <meta name="copyright" content="Marco Noce 2024">
 <meta name="keywords" content="ansible, module, fact, solaris, svcs, smf, services">
+<head>
+  <meta name="google-site-verification" content="iy1EPGFS1au6DuSC5R4as3Ipr0LymDVNU3vSHJIrrng" />
+</head>
 
 <div align="center">
 
