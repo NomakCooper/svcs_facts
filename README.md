@@ -1,3 +1,8 @@
+<meta name="author" content="Marco Noce">
+<meta name="description" content="Gathers facts about Solaris SMF services on a SunOS/Oracle Solaris host by svcs">
+<meta name="copyright" content="Marco Noce 2024">
+<meta name="keywords" content="ansible, module, fact, solaris, svcs, smf, services">
+
 <div align="center">
 
 ![Ansible Custom Module][ansible-shield]
