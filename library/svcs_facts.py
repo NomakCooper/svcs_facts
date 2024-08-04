@@ -61,7 +61,7 @@ ansible_facts:
           type: str
           sample: "-"
         STIME:
-          description: If the service instance entered the current state within the last 24 hours, this value indicates the time that it did so. Otherwise, this value indicates the date on which it did so, printed with underscores (_) in place of blanks.
+          description: If the service instance entered the current state within the last 24 hours, this value indicates the time that it did so.
           returned: always
           type: str
           sample: "21:21:47"
@@ -74,7 +74,7 @@ ansible_facts:
           description: The FMRI of the service instance.
           returned: always
           type: str
-          sample: "svc:/network/smtp:sendmail"                                        
+          sample: "svc:/network/smtp:sendmail"
 '''
 
 import re
@@ -127,7 +127,7 @@ def main():
     }
     module = AnsibleModule(
         argument_spec=dict(
-            #no arguments necessary
+            # no arguments necessary
         ),
         supports_check_mode=True,
     )
@@ -156,7 +156,6 @@ def main():
         if bin_path is None:
             raise EnvironmentError(msg='Unable to find any of the supported commands in PATH: {0}'.format(", ".join(sorted(commands_map))))
 
-        
         args = commands_map[command]['args']
         rc, stdout, stderr = module.run_command([bin_path] + args)
         if rc == 0:
