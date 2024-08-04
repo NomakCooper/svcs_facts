@@ -77,7 +77,6 @@ ansible_facts:
           sample: "svc:/network/smtp:sendmail"
 '''
 
-import re
 import platform
 from ansible.module_utils.common.text.converters import to_native
 from ansible.module_utils.basic import AnsibleModule
