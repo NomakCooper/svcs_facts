@@ -96,6 +96,10 @@ ok: [sol11host] => {
 |CTID      |string                |The primary contract ID for the service instance. Not all instances have valid primary contract IDs.                                                              |always  |"67" |
 |FMRI      |string                |The FMRI of the service instance.                                 |always  |"svc:/network/smtp:sendmail"          |
 
+## SANITY TEST
+
+* Ansible sanity test is available in [SANITY.md] file
+
 ## Integration
 
 1. Assuming you are in the root folder of your ansible project.
@@ -135,3 +139,4 @@ $ cp path/to/module library
 [license-shield]: https://img.shields.io/github/license/nomakcooper/svcs_facts?style=for-the-badge&label=LICENSE
 
 [svcs]: https://docs.oracle.com/cd/E86824_01/html/E54763/svcs-1.html
+[SANITY.md]: SANITY.md
